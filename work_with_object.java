@@ -46,7 +46,6 @@ class Printer {
 }
 
 public class work_with_object {
-
     public static void main(String[] args) {
         Computer pc = new Computer("Dell", 16);
         Printer pr = new Printer("HP", 20);
@@ -56,7 +55,9 @@ public class work_with_object {
 
         pc.setRam(32);
         pr.setSpeed(25);
-         
+
+      
+
         System.out.println("New RAM: " + pc.getRam());
         System.out.println("New Speed: " + pr.getSpeed());
     }

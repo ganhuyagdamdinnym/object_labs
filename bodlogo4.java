@@ -1,26 +1,25 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 public class bodlogo4 {
 
-    public static double trapezoidArea(double a, double b, double alpha) {
+    public static void main(String[] args){
+        Scanner input=new Scanner(System.in);
+        System.out.print("enter a=");
+        double a=input.nextDouble();
 
-        double rad = Math.toRadians(alpha);
-        double h = ((a - b) / 2) * Math.tan(rad);
-        double S = ((a + b) / 2) * h;
-        return S;
-    }
+        System.out.print("enter b=");
+        double b=input.nextDouble();
 
-    public static void main(String[] args) {
-
+        System.out.print("enter alpha=");
+        double alpha=input.nextDouble();
         
-        Scanner scanner= new Scanner(System.in);
-        System.out.print("enter a,b alpha:");
-        double a = scanner.nextFloat();
-        double b =scanner.nextFloat();
-        double alpha=scanner.nextFloat();
-        double area = trapezoidArea(a, b, alpha);
-        System.out.println("Talbai: " + area);
+        double rad=Math.toRadians(alpha);
+        double h=(a-b)*Math.tan(rad);
 
-        scanner.close();
+        double s=((a+b)/2)*h;
+
+        System.out.println(s);
+        input.close();
     }
 }

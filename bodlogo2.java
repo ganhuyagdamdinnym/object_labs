@@ -2,35 +2,28 @@ import java.util.Scanner;
 
 public class bodlogo2 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter text: ");
-        String word = input.nextLine();
+        Scanner input=new Scanner(System.in);
+        System.out.print("enter text");
+        String text=input.nextLine();
 
-        // word = word.replaceAll(" +", ",");
-        // word = word.replace(" ", ",");
+        text= text.replaceAll(" +", ",");
 
-        String result = "";
-
-        boolean lastWasSpace = false;
-
-        for (int i = 0; i < word.length(); i++) {
-            char ch = word.charAt(i);
-
-            if (ch == ' ') {
-                if (!lastWasSpace) {
-                    result += ",";
-                    lastWasSpace = true;
+        boolean lastWasSpace=false;
+        String newWord="";
+        for(int i=0;i<text.length();i++){
+            char ch =text.charAt(i);
+            if(ch ==' '){
+                if(lastWasSpace==false){
+                   newWord=newWord+",";
+                   lastWasSpace=true;
                 }
-                // хэрвээ дараагийн space бол нэмэхгүй
-            } else {
-                result += ch; // space биш тэмдэгтээ шууд нэмнэ
-                lastWasSpace = false;
+            }else{
+                newWord=newWord+ch;
             }
         }
-
-        System.out.println("Result: " + result);
+        System.out.print(text);
         input.close();
     }
 }
